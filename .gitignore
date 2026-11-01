@@ -1,0 +1,26 @@
+cat > .gitignore <<'EOF'
+# Original competition datasets
+data/
+*.csv.gz
+dataset11-30.csv
+export_arh_*.csv
+submission.csv
+
+# Large intermediate artefacts
+outputs/_intermediate/
+outputs/provisional_interactions/
+outputs/*.sqlite
+outputs/*.db
+*.pkl
+
+# Python and system files
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+.env
+
+# Credentials
+kaggle.json
+EOF
