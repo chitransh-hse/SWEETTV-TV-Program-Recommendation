@@ -1,0 +1,51 @@
+{
+  "generated_by": "src/build_schedule_index.py",
+  "method": "stdlib csv streaming; compact array per channel; no pandas",
+  "training_rows_indexed": 2148628,
+  "training_channels_indexed": 404,
+  "programme_ids_indexed": 8234,
+  "labelled_rows_indexed": 237118,
+  "unlabelled_rows_indexed": 1911511,
+  "nonpositive_duration_rows_skipped": 1,
+  "invalid_timestamps": 0,
+  "train_time_range": [
+    "2020-03-08 23:00:00",
+    "2020-07-27 12:00:00"
+  ],
+  "internal_overlap_pairs": 5,
+  "channels_with_internal_overlap": 5,
+  "gap_occurrences_within_channel": 399,
+  "cross_export_interval_overlaps": 1,
+  "cross_export_overlap_examples": [
+    {
+      "channel": 487,
+      "first": [
+        "2020-05-17 22:35:00",
+        "2020-05-18 01:00:00"
+      ],
+      "second": [
+        "2020-05-18 00:20:00",
+        "2020-05-18 03:10:00"
+      ],
+      "first_pid": "0",
+      "second_pid": "0"
+    }
+  ],
+  "test_export": {
+    "rows": 1295378,
+    "channels": 404,
+    "labelled_rows": 144774,
+    "min_start": "2020-07-27 00:00:00",
+    "max_end": "2020-10-19 12:00:00",
+    "channels_missing_from_test": 1
+  },
+  "handover_21_30_to_31_42": {
+    "channels_with_gap": 1,
+    "channels_whose_test_rows_start_before_train_ends": 0
+  },
+  "index_file": "outputs/_intermediate/schedule_index.pkl",
+  "index_bytes": 62474648,
+  "runtime_seconds": 11.95,
+  "peak_rss_mb": 453.8,
+  "python": "3.9.6"
+}

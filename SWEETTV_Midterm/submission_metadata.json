@@ -1,0 +1,98 @@
+{
+  "generated_by": "src/build_final_submission.py",
+  "status": "complete",
+  "selected_model": {
+    "method": "hybrid",
+    "config": "hybrid_1.00_0.20_0.05_repeat_recency+popularity+content_based",
+    "params": {
+      "components": [
+        "repeat_recency",
+        "popularity",
+        "content_based"
+      ],
+      "weights": {
+        "repeat_recency": 1.0,
+        "popularity": 0.2,
+        "content_based": 0.05
+      },
+      "rrf_k": 60,
+      "repeat_tau_days": 120.0,
+      "repeat_alpha": 1.0
+    },
+    "validation_map5": 0.634319,
+    "validation_recall5": 0.051449
+  },
+  "components_used": [
+    "repeat_recency",
+    "popularity",
+    "content_based"
+  ],
+  "component_weights": {
+    "repeat_recency": 1.0,
+    "popularity": 0.2,
+    "content_based": 0.05
+  },
+  "rrf_k": 60,
+  "candidate_universe": {
+    "period": "weeks 31-42",
+    "labelled_programmes": 6636,
+    "contains_zero": false
+  },
+  "metadata_sources": {
+    "item_features": "schedule exports weeks 11-20, 21-30 and 31-42",
+    "note": "schedule content only; no viewing behaviour from any period"
+  },
+  "users": {
+    "total": 1260,
+    "with_training_history": 1250,
+    "without_training_history": 10
+  },
+  "fallback_policy": "global training popularity by distinct users, restricted to the test candidate universe",
+  "repeats_allowed": true,
+  "checks": {
+    "header_exact": true,
+    "row_count_1260": true,
+    "unique_user_ids": true,
+    "template_order_preserved": true,
+    "five_ids_per_row": true,
+    "no_duplicate_ids_within_row": true,
+    "no_zero_id": true,
+    "all_ids_numeric": true,
+    "all_ids_in_test_universe": true
+  },
+  "submission": {
+    "path": "outputs/final_submission.csv",
+    "rows": 1260,
+    "distinct_programme_ids": 220,
+    "distinct_recommendation_lists": 1125,
+    "sha256": "b661738f2aecb928a133812f406edca98de7b7d55280d878c4449924fbca412e"
+  },
+  "inputs_sha256": {
+    "train_pairs": "9bfef44135dafa5da427fe8b7da5dc00ff93f2ec2c07317c818d52a662121a79",
+    "submission_template": "d8c209dce3c7c9d815d8e2a6226e1be63052ee7afa7e8ba8b75dc2f703967a02"
+  },
+  "comparison_with_existing": {
+    "solution.csv": {
+      "exists": true,
+      "mean_overlap_at_5": 3.9508,
+      "top1_agreement": 0.7365,
+      "identical_rows": 60,
+      "sha256": "ef7c25829560f84922590a12f92bde4a2270250382f6d04ad32c00bdaaad19f0"
+    },
+    "solution_improved.csv": {
+      "exists": true,
+      "mean_overlap_at_5": 4.0175,
+      "top1_agreement": 0.7325,
+      "identical_rows": 64,
+      "sha256": "cf075c2379a16215b0e20b3712dfbb4d7d49ffc60262315503566d0ff2f8eeb7"
+    },
+    "final_submission.csv": {
+      "exists": true,
+      "mean_overlap_at_5": 3.0508,
+      "top1_agreement": 0.5984,
+      "identical_rows": 19,
+      "sha256": "7c330b884d79340491717181e9dfe3c6c1a3c721aa8a750a5948858fb0a177c7"
+    }
+  },
+  "runtime_seconds": 15.41
+}

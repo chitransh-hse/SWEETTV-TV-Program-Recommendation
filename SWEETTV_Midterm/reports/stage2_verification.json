@@ -1,0 +1,604 @@
+{
+  "generated_by": "src/verify_stage2.py",
+  "timestamp_utc": "2026-10-31 13:26:49",
+  "checks_total": 96,
+  "checks_passed": 96,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "no tv_show_id = 0 in event store",
+      "passed": true,
+      "violations": 0,
+      "detail": "labelled events only"
+    },
+    {
+      "check": "overlap > 0 and <= programme duration",
+      "passed": true,
+      "violations": 0,
+      "detail": "3847696 events; min/max overlap checked"
+    },
+    {
+      "check": "ratio equals overlap/programme_duration",
+      "passed": true,
+      "violations": 0,
+      "detail": "tolerance 1e-9"
+    },
+    {
+      "check": "viewing start < stop",
+      "passed": true,
+      "violations": 0,
+      "detail": "all events"
+    },
+    {
+      "check": "no test-period (weeks 31-42) schedule rows used",
+      "passed": true,
+      "violations": 0,
+      "detail": "period in (1,2)"
+    },
+    {
+      "check": "no future viewing (start <= 2020-07-26 23:59:58)",
+      "passed": true,
+      "violations": 0,
+      "detail": "observation window only"
+    },
+    {
+      "check": "every event user_id exists verbatim in viewing log",
+      "passed": true,
+      "violations": 0,
+      "detail": "4895 distinct users in events"
+    },
+    {
+      "check": "every event programme ID exists verbatim in training schedules",
+      "passed": true,
+      "violations": 0,
+      "detail": "4363 distinct programmes in events"
+    },
+    {
+      "check": "sampled events cite a real (channel, start, programme) schedule row",
+      "passed": true,
+      "violations": 0,
+      "detail": "192588 sampled (view_id % 20 == 0)"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleA_60s_10pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "757941 rows"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleA_60s_10pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleA_60s_10pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleA_60s_10pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleA_60s_10pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleA_60s_10pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "757941 vs 757941"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "2029895 vs 2029895"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleB_60s_20pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "584909 rows"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleB_60s_20pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleB_60s_20pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleB_60s_20pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleB_60s_20pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleB_60s_20pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "584909 vs 584909"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1528996 vs 1528996"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleC_120s_20pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "584679 rows"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleC_120s_20pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleC_120s_20pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleC_120s_20pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleC_120s_20pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleC_120s_20pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "584679 vs 584679"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1525870 vs 1525870"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleD_120s_50pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "336659 rows"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleD_120s_50pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleD_120s_50pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleD_120s_50pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleD_120s_50pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleD_120s_50pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "336659 vs 336659"
+    },
+    {
+      "check": "dataset strategyA_keepall__ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "884892 vs 884892"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleA_60s_10pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "609483 rows"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleA_60s_10pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleA_60s_10pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleA_60s_10pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleA_60s_10pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleA_60s_10pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "609483 vs 609483"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1425621 vs 1425621"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleB_60s_20pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "465006 rows"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleB_60s_20pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleB_60s_20pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleB_60s_20pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleB_60s_20pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleB_60s_20pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "465006 vs 465006"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1033865 vs 1033865"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleC_120s_20pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "464764 rows"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleC_120s_20pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleC_120s_20pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleC_120s_20pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleC_120s_20pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleC_120s_20pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "464764 vs 464764"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1032083 vs 1032083"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleD_120s_50pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "262770 rows"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleD_120s_50pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleD_120s_50pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleD_120s_50pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleD_120s_50pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleD_120s_50pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "262770 vs 262770"
+    },
+    {
+      "check": "dataset strategyB_maxoverlap__ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "559140 vs 559140"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleA_60s_10pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "601310 rows"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleA_60s_10pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleA_60s_10pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleA_60s_10pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleA_60s_10pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleA_60s_10pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "601310 vs 601310"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1425621 vs 1425621"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleB_60s_20pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "457160 rows"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleB_60s_20pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleB_60s_20pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleB_60s_20pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleB_60s_20pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleB_60s_20pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "457160 vs 457160"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1033865 vs 1033865"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleC_120s_20pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "456935 rows"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleC_120s_20pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleC_120s_20pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleC_120s_20pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleC_120s_20pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleC_120s_20pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "456935 vs 456935"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1032083 vs 1032083"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleD_120s_50pct.csv.gz: unique (user, programme)",
+      "passed": true,
+      "violations": 0,
+      "detail": "257898 rows"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleD_120s_50pct.csv.gz: valid non-zero programme IDs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleD_120s_50pct.csv.gz: user IDs preserved",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleD_120s_50pct.csv.gz: timestamps inside window and ordered",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleD_120s_50pct.csv.gz: numeric sanity",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleD_120s_50pct.csv.gz: rows match metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "257898 vs 257898"
+    },
+    {
+      "check": "dataset strategyC_maxratio__ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "559140 vs 559140"
+    },
+    {
+      "check": "event store count matches match_diagnostics.json",
+      "passed": true,
+      "violations": 0,
+      "detail": "3847696 events"
+    },
+    {
+      "check": "repeat run: event store identical",
+      "passed": true,
+      "violations": 0,
+      "detail": "945863fae18d5b239d71879eb239ed99307f4c527a76a014056b6574ab2cd1e5"
+    },
+    {
+      "check": "repeat run: all 12 datasets identical",
+      "passed": true,
+      "violations": 0,
+      "detail": "none"
+    }
+  ],
+  "digests": {
+    "overlaps_db_rows": 3847696,
+    "overlaps_db_sha256": "945863fae18d5b239d71879eb239ed99307f4c527a76a014056b6574ab2cd1e5",
+    "datasets": {
+      "strategyA_keepall__ruleA_60s_10pct.csv.gz": "6879b28a5ef15a5461e24655c37f6f81402b2c4c3acb80767a24f48eb9a2b243",
+      "strategyA_keepall__ruleB_60s_20pct.csv.gz": "f3fbbf183887c9cabfbff4ef8733f274d0a82b8d5bc2555018cd0cd46dd63875",
+      "strategyA_keepall__ruleC_120s_20pct.csv.gz": "f94e02c1151a8a0964e842431c0d04122e760ea209eab0960c02115d1492fc7a",
+      "strategyA_keepall__ruleD_120s_50pct.csv.gz": "819928a4afad1291568fca50ab64466d7179271488c0bc74d7689d0370696bd0",
+      "strategyB_maxoverlap__ruleA_60s_10pct.csv.gz": "175ee6c82a03256c7adb2d42631d95d41a8cd29f11e53f9af3bf28399a7c8cb3",
+      "strategyB_maxoverlap__ruleB_60s_20pct.csv.gz": "b241956f0880457e202e334087301978410219f563c11aee7ab6ae551908fc40",
+      "strategyB_maxoverlap__ruleC_120s_20pct.csv.gz": "8eeb61caf76234b0f22862f6bd716ed17c807f98336504d9f31d81cd23c6a825",
+      "strategyB_maxoverlap__ruleD_120s_50pct.csv.gz": "1ade4dc4844a45d928084122fd4c65c7a9c8a311fed65815661f2ab6703e79fd",
+      "strategyC_maxratio__ruleA_60s_10pct.csv.gz": "286a20c989f24e27e1b5581f4325d8c6fe9a8fb9afb6d40bcca2c0f1b91d37bc",
+      "strategyC_maxratio__ruleB_60s_20pct.csv.gz": "8a876c8199eeba4d1addc848ecbef1e9178d78ccd3dee80d748f259a2ef04694",
+      "strategyC_maxratio__ruleC_120s_20pct.csv.gz": "27ae0a2b1567318443651b57b4256f2a1027dc9388d03d796345ca09aa596036",
+      "strategyC_maxratio__ruleD_120s_50pct.csv.gz": "bfdff494064ab4c61a77d46bf2e93c7ebc728350293e705fc1839c2a01565b84"
+    }
+  },
+  "runtime_seconds": 46.15
+}

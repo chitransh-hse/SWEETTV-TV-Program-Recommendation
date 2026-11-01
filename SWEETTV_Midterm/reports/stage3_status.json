@@ -1,0 +1,161 @@
+{
+  "generated_by": "src/build_stage3_status.py",
+  "stage": "Stage 3 pre-modelling status",
+  "verified_stage2_5": {
+    "boundary_rule": "earliest_matched_airing",
+    "cross_period_sessions": 97,
+    "cross_assigned_training": 97,
+    "cross_assigned_validation": 0,
+    "events_excluded": 192,
+    "sessions_in_both_splits": 0,
+    "verification_checks_passed": 323,
+    "verification_checks_total": 323,
+    "verification_checks_failed": 0,
+    "source_event_store_sha256": "945863fae18d5b239d71879eb239ed99307f4c527a76a014056b6574ab2cd1e5",
+    "temporal_split_db_sha256": "395532d3a1324d633fe6349e68dc201838bec655f02f56a885dec17f79c6c472",
+    "metadata_projection_sha256": "c1f8a53e8020ab71a16e8d3e3b1b4a4e8aaad34f6f2c8f1ad5b686df521ac9c1"
+  },
+  "main_configuration": {
+    "strategy": "A (keep all matches)",
+    "rule": "B (60 s minimum overlap, 20% minimum overlap ratio)",
+    "train_pairs": 335816,
+    "train_users": 4823,
+    "train_items": 2807,
+    "validation_pairs": 312934,
+    "validation_users": 4774,
+    "validation_items": 3088,
+    "validation_users_without_training_history": 61,
+    "train_users_without_validation_history": 110,
+    "train_pair_table": {
+      "file": "outputs/temporal_interactions/train_strategyA_ruleB_60s_20pct.csv.gz",
+      "pairs": 335816,
+      "users": 4823,
+      "items": 2807,
+      "mean_pairs_per_user": 69.63,
+      "median_pairs_per_user": 62,
+      "p90_pairs_per_user": 130,
+      "max_pairs_per_user": 788
+    },
+    "validation_pair_table": {
+      "file": "outputs/temporal_interactions/validation_strategyA_ruleB_60s_20pct.csv.gz",
+      "pairs": 312934,
+      "users": 4774,
+      "items": 3088,
+      "mean_pairs_per_user": 65.55,
+      "median_pairs_per_user": 50,
+      "p90_pairs_per_user": 141,
+      "max_pairs_per_user": 428
+    }
+  },
+  "candidate_universe": {
+    "training_weeks_11_20": 5847,
+    "validation_weeks_21_30": 6363,
+    "test_weeks_31_42": 6636,
+    "union": 9671,
+    "cold_start_test_programmes": 2566,
+    "cold_start_with_usable_metadata": 2566
+  },
+  "submission_template": {
+    "file": "data/submission.csv",
+    "rows": 1260,
+    "users_in_training": 1250,
+    "users_without_training_history": 10,
+    "users_without_training_or_validation_history": 2
+  },
+  "existing_submissions": [
+    {
+      "exists": true,
+      "path": "/Users/chitranshgupta/Downloads/solution.csv",
+      "rows": 1260,
+      "header": [
+        "user_id",
+        "tv_show_id"
+      ],
+      "unique_user_ids": 1260,
+      "order_matches_template": true,
+      "five_ids_per_row": true,
+      "duplicate_ids_within_row": 0,
+      "zero_ids": 0,
+      "distinct_programme_ids": 268,
+      "distinct_recommendation_lists": 1222,
+      "sha256": "ef7c25829560f84922590a12f92bde4a2270250382f6d04ad32c00bdaaad19f0",
+      "label": "solution.csv"
+    },
+    {
+      "exists": true,
+      "path": "/Users/chitranshgupta/Downloads/solution_improved.csv",
+      "rows": 1260,
+      "header": [
+        "user_id",
+        "tv_show_id"
+      ],
+      "unique_user_ids": 1260,
+      "order_matches_template": true,
+      "five_ids_per_row": true,
+      "duplicate_ids_within_row": 0,
+      "zero_ids": 0,
+      "distinct_programme_ids": 237,
+      "distinct_recommendation_lists": 1155,
+      "sha256": "cf075c2379a16215b0e20b3712dfbb4d7d49ffc60262315503566d0ff2f8eeb7",
+      "label": "solution_improved.csv"
+    },
+    {
+      "exists": true,
+      "path": "/Users/chitranshgupta/Downloads/final_submission.csv",
+      "rows": 1260,
+      "header": [
+        "user_id",
+        "tv_show_id"
+      ],
+      "unique_user_ids": 1260,
+      "order_matches_template": true,
+      "five_ids_per_row": true,
+      "duplicate_ids_within_row": 0,
+      "zero_ids": 0,
+      "distinct_programme_ids": 114,
+      "distinct_recommendation_lists": 1092,
+      "sha256": "7c330b884d79340491717181e9dfe3c6c1a3c721aa8a750a5948858fb0a177c7",
+      "label": "final_submission.csv"
+    }
+  ],
+  "existing_submission_note": "Files were found outside the project in ~/Downloads and were inspected read-only. They are not overwritten by Stage 3.",
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "not installed",
+    "scikit-learn": "not installed",
+    "implicit": "not installed",
+    "networkx": "not installed",
+    "reportlab": "installed (PDF rendering)",
+    "gpu": "none (CPU only, Apple M2, 8 GiB RAM)"
+  },
+  "user_reported_kaggle_scores": {
+    "first_submission_public": 0.3583,
+    "first_submission_private": 0.33986,
+    "improved_offline_validation_map5": 0.63747,
+    "improved_kaggle_score": null,
+    "verified": false,
+    "note": "Reported by the user; no Kaggle API result is stored locally."
+  },
+  "planned_protocol": {
+    "metric": "MAP@5",
+    "evaluation_users": "all users with >= 1 validation interaction",
+    "candidate_universe": "labelled programmes in the target period's schedule export; tv_show_id=0 excluded",
+    "repeats": "allowed identically for every method",
+    "fallback": "global training popularity restricted to the candidate universe for users with no history or fewer than five method scores",
+    "methods": [
+      "popularity baseline",
+      "content-based filtering on schedule metadata",
+      "association rules on training co-viewing",
+      "rank-fusion hybrid"
+    ],
+    "tuning": "small documented grid on validation only"
+  },
+  "open_items": [
+    "Kaggle public/private score for solution_improved.csv",
+    "Kaggle submission-result screenshot",
+    "GitHub repository URL (no .git directory found)",
+    "AI-session export, if the exam requires it"
+  ]
+}

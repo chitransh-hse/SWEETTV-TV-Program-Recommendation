@@ -1,0 +1,128 @@
+{
+  "os": {
+    "product": "macOS",
+    "version": "26.1",
+    "build": "25B78",
+    "kernel": "25.1.0",
+    "machine": "arm64",
+    "cpu": "Apple M2",
+    "logical_cores": "8"
+  },
+  "python": {
+    "version": "3.9.6",
+    "implementation": "CPython",
+    "executable": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+    "compiler": "Clang 17.0.0 (clang-1700.6.4.2)",
+    "pip": "pip 21.2.4 from /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/site-packages/pip (python 3.9)"
+  },
+  "memory": {
+    "total_bytes": 8589934592,
+    "page_size_bytes": 16384,
+    "free_bytes": 71565312,
+    "inactive_bytes": 1613037568,
+    "speculative_bytes": 27541504,
+    "wired_bytes": 2357575680,
+    "compressor_bytes": 2246131712
+  },
+  "disk": {
+    "path": "/Users/chitranshgupta/Downloads/SWEETTV_Midterm",
+    "total_bytes": 494384795648,
+    "used_bytes": 163215007744,
+    "free_bytes": 331169787904
+  },
+  "packages": [
+    {
+      "package": "pandas",
+      "installed": true,
+      "version": "2.3.3",
+      "location": "/Users/chitranshgupta/Library/Python/3.9/lib/python/site-packages/pandas/__init__.py"
+    },
+    {
+      "package": "numpy",
+      "installed": true,
+      "version": "2.0.2",
+      "location": "/Users/chitranshgupta/Library/Python/3.9/lib/python/site-packages/numpy/__init__.py"
+    },
+    {
+      "package": "scipy",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "scikit-learn",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "pyarrow",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "polars",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "duckdb",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "matplotlib",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "seaborn",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "networkx",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "tqdm",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "psutil",
+      "installed": false,
+      "version": null,
+      "location": null
+    },
+    {
+      "package": "jupyter",
+      "installed": false,
+      "version": null,
+      "location": null
+    }
+  ],
+  "dataset_sizes": {
+    "dataset11-30.csv": 396216555,
+    "export_arh_11-20-final.csv": 153322643,
+    "export_arh_21-30-final.csv": 154366907,
+    "export_arh_31-42-final.csv": 185952991,
+    "submission.csv": 38348
+  },
+  "dataset_total_bytes": 889897444,
+  "audit_run": {
+    "started_at_epoch": 1793451574,
+    "runtime_seconds": 107.04,
+    "peak_rss_mb": 717.3,
+    "python": "3.9.6",
+    "method": "stdlib csv streaming; no full-file pandas load; no files modified"
+  }
+}

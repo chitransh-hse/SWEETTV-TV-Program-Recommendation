@@ -1,0 +1,316 @@
+{
+  "generated_by": "src/analyze_timestamp_semantics.py",
+  "method": "naive wall-clock parsing; no timezone conversion; offsets are diagnostics only",
+  "viewing": {
+    "rows": 5821987,
+    "users": 4914,
+    "channels": 202,
+    "parse_errors": 0,
+    "missing_fields": 0,
+    "min_start": "2020-03-09 00:00:02",
+    "max_stop": "2020-07-26 23:59:58",
+    "sampled_rows": 116439,
+    "sample_every": 50
+  },
+  "schedule": {
+    "training_rows": 2148628,
+    "channels": 404,
+    "min_start": "2020-03-08 23:00:00",
+    "max_end": "2020-07-27 12:00:00"
+  },
+  "offset_sweep": [
+    {
+      "offset_seconds": -10800,
+      "coverage_pct": 92.829,
+      "start_within_60s_pct": 3.55,
+      "start_within_300s_pct": 17.04,
+      "end_within_60s_pct": 3.534,
+      "median_nearest_start_delta_s": 1110,
+      "median_nearest_end_delta_s": 1102,
+      "single_overlap_median_ratio": 0.0532,
+      "single_overlap_share_pct": 69.37
+    },
+    {
+      "offset_seconds": -7200,
+      "coverage_pct": 92.856,
+      "start_within_60s_pct": 3.538,
+      "start_within_300s_pct": 17.054,
+      "end_within_60s_pct": 3.655,
+      "median_nearest_start_delta_s": 1108,
+      "median_nearest_end_delta_s": 1111,
+      "single_overlap_median_ratio": 0.0532,
+      "single_overlap_share_pct": 69.57
+    },
+    {
+      "offset_seconds": -3600,
+      "coverage_pct": 92.888,
+      "start_within_60s_pct": 3.511,
+      "start_within_300s_pct": 16.729,
+      "end_within_60s_pct": 3.447,
+      "median_nearest_start_delta_s": 1152,
+      "median_nearest_end_delta_s": 1158,
+      "single_overlap_median_ratio": 0.0533,
+      "single_overlap_share_pct": 69.9
+    },
+    {
+      "offset_seconds": -1800,
+      "coverage_pct": 92.892,
+      "start_within_60s_pct": 3.372,
+      "start_within_300s_pct": 16.573,
+      "end_within_60s_pct": 3.542,
+      "median_nearest_start_delta_s": 1129,
+      "median_nearest_end_delta_s": 1137,
+      "single_overlap_median_ratio": 0.0532,
+      "single_overlap_share_pct": 69.72
+    },
+    {
+      "offset_seconds": 0,
+      "coverage_pct": 92.897,
+      "start_within_60s_pct": 3.702,
+      "start_within_300s_pct": 17.582,
+      "end_within_60s_pct": 4.811,
+      "median_nearest_start_delta_s": 1081,
+      "median_nearest_end_delta_s": 1053,
+      "single_overlap_median_ratio": 0.0538,
+      "single_overlap_share_pct": 70.01
+    },
+    {
+      "offset_seconds": 1800,
+      "coverage_pct": 92.903,
+      "start_within_60s_pct": 3.434,
+      "start_within_300s_pct": 16.325,
+      "end_within_60s_pct": 3.184,
+      "median_nearest_start_delta_s": 1161,
+      "median_nearest_end_delta_s": 1204,
+      "single_overlap_median_ratio": 0.0517,
+      "single_overlap_share_pct": 69.48
+    },
+    {
+      "offset_seconds": 3600,
+      "coverage_pct": 92.903,
+      "start_within_60s_pct": 3.455,
+      "start_within_300s_pct": 16.131,
+      "end_within_60s_pct": 3.421,
+      "median_nearest_start_delta_s": 1175,
+      "median_nearest_end_delta_s": 1198,
+      "single_overlap_median_ratio": 0.0516,
+      "single_overlap_share_pct": 70.08
+    },
+    {
+      "offset_seconds": 7200,
+      "coverage_pct": 92.903,
+      "start_within_60s_pct": 3.332,
+      "start_within_300s_pct": 15.845,
+      "end_within_60s_pct": 3.356,
+      "median_nearest_start_delta_s": 1201,
+      "median_nearest_end_delta_s": 1177,
+      "single_overlap_median_ratio": 0.0509,
+      "single_overlap_share_pct": 70.31
+    },
+    {
+      "offset_seconds": 10800,
+      "coverage_pct": 92.891,
+      "start_within_60s_pct": 3.314,
+      "start_within_300s_pct": 15.661,
+      "end_within_60s_pct": 3.288,
+      "median_nearest_start_delta_s": 1198,
+      "median_nearest_end_delta_s": 1209,
+      "single_overlap_median_ratio": 0.0513,
+      "single_overlap_share_pct": 70.9
+    }
+  ],
+  "offset_zero_choice": {
+    "best_start_within_300s": 0,
+    "best_end_within_60s": 0,
+    "best_median_end_delta": 0
+  },
+  "zero_overlap_reasons_at_zero_offset": {
+    "sampled_sessions": 116439,
+    "channel_absent_from_training_schedules": 2211,
+    "channel_present_but_no_covering_row_or_outside_coverage": 6060
+  },
+  "dst": {
+    "jump_2020-03-29T03:00_wall_clock": "2020-03-29 03:00:00",
+    "sessions_spanning_jump": 117,
+    "duration_mismatch_rows": 117,
+    "duration_mismatch_rows_spanning_jump": 117,
+    "mismatch_delta_counts": {
+      "-3600": 117
+    },
+    "mismatch_examples": [
+      {
+        "start": "2020-03-28 22:47:45",
+        "stop": "2020-03-30 09:02:48",
+        "duraton": 119703,
+        "stop_minus_start": 123303,
+        "delta": -3600,
+        "spans_dst_jump": true
+      },
+      {
+        "start": "2020-03-28 22:56:59",
+        "stop": "2020-03-29 04:11:55",
+        "duraton": 15296,
+        "stop_minus_start": 18896,
+        "delta": -3600,
+        "spans_dst_jump": true
+      },
+      {
+        "start": "2020-03-29 00:15:15",
+        "stop": "2020-03-29 04:05:32",
+        "duraton": 10217,
+        "stop_minus_start": 13817,
+        "delta": -3600,
+        "spans_dst_jump": true
+      },
+      {
+        "start": "2020-03-29 00:27:30",
+        "stop": "2020-03-29 04:06:25",
+        "duraton": 9535,
+        "stop_minus_start": 13135,
+        "delta": -3600,
+        "spans_dst_jump": true
+      },
+      {
+        "start": "2020-03-29 00:46:06",
+        "stop": "2020-03-29 04:35:40",
+        "duraton": 10174,
+        "stop_minus_start": 13774,
+        "delta": -3600,
+        "spans_dst_jump": true
+      }
+    ],
+    "offset_check_before_after": {
+      "before_2020-03-29T03:00": [
+        {
+          "offset_seconds": -3600,
+          "start_within_60s_pct": 3.462,
+          "end_within_60s_pct": 3.575
+        },
+        {
+          "offset_seconds": 0,
+          "start_within_60s_pct": 3.758,
+          "end_within_60s_pct": 4.984
+        },
+        {
+          "offset_seconds": 3600,
+          "start_within_60s_pct": 3.446,
+          "end_within_60s_pct": 3.506
+        }
+      ],
+      "after_2020-03-29T03:00": [
+        {
+          "offset_seconds": -3600,
+          "start_within_60s_pct": 3.525,
+          "end_within_60s_pct": 3.411
+        },
+        {
+          "offset_seconds": 0,
+          "start_within_60s_pct": 3.687,
+          "end_within_60s_pct": 4.764
+        },
+        {
+          "offset_seconds": 3600,
+          "start_within_60s_pct": 3.458,
+          "end_within_60s_pct": 3.398
+        }
+      ]
+    }
+  },
+  "midnight_and_long_sessions": {
+    "sessions_crossing_midnight": 119856,
+    "sessions_crossing_midnight_pct": 2.059,
+    "durations_ge_2h": 236335,
+    "durations_ge_4h": 55771,
+    "durations_ge_8h": 9747,
+    "durations_ge_24h": 52,
+    "durations_ge_48h": 6,
+    "max_duration_seconds": 342145,
+    "duration_p50": 396.0,
+    "duration_p95": 6345.0,
+    "duration_p99": 14080.139999999665
+  },
+  "duration_comparison": {
+    "viewing_duration_median_s": 399,
+    "schedule_duration_median_s": 1500.0,
+    "schedule_duration_mean_s": 2245.7,
+    "single_overlap_sessions": 81515,
+    "single_overlap_view_duration_median_s": 242,
+    "single_overlap_ratio_median": 0.0538,
+    "single_overlap_ratio_mean": 0.1203,
+    "single_overlap_ratio_ge_0_9_pct": 0.23,
+    "single_overlap_ratio_lt_0_1_pct": 65.77
+  },
+  "minute_of_hour_alignment": {
+    "top_session_start_minutes": [
+      {
+        "minute": 0,
+        "pct": 1.81
+      },
+      {
+        "minute": 15,
+        "pct": 1.79
+      },
+      {
+        "minute": 45,
+        "pct": 1.74
+      },
+      {
+        "minute": 16,
+        "pct": 1.74
+      },
+      {
+        "minute": 1,
+        "pct": 1.73
+      },
+      {
+        "minute": 31,
+        "pct": 1.73
+      },
+      {
+        "minute": 30,
+        "pct": 1.72
+      },
+      {
+        "minute": 17,
+        "pct": 1.72
+      }
+    ],
+    "top_programme_start_minutes": [
+      {
+        "minute": 0,
+        "pct": 22.49
+      },
+      {
+        "minute": 30,
+        "pct": 11.99
+      },
+      {
+        "minute": 15,
+        "pct": 6.06
+      },
+      {
+        "minute": 45,
+        "pct": 5.72
+      },
+      {
+        "minute": 50,
+        "pct": 5.19
+      },
+      {
+        "minute": 20,
+        "pct": 5.12
+      },
+      {
+        "minute": 10,
+        "pct": 4.92
+      },
+      {
+        "minute": 40,
+        "pct": 4.81
+      }
+    ]
+  },
+  "runtime_seconds": 56.15,
+  "peak_rss_mb": 298.3,
+  "python": "3.9.6"
+}

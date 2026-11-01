@@ -1,0 +1,206 @@
+{
+  "generated_by": "src/analyze_coverage.py",
+  "sessions": 5821987,
+  "sessions_with_zero_any_overlap": 413389,
+  "sessions_with_zero_labelled_overlap": 2857641,
+  "sessions_with_zero_labelled_overlap_pct": 49.084,
+  "histogram_scheduled_airings_per_session": {
+    "0": 413389,
+    "1": 4069441,
+    "2": 931920,
+    "3": 219559,
+    "4_plus": 187678
+  },
+  "histogram_labelled_airings_per_session": {
+    "0": 2857641,
+    "1": 2374152,
+    "2": 435873,
+    "3": 93747,
+    "4_plus": 60574
+  },
+  "by_schedule_period": {
+    "1": {
+      "week_range": "11-20",
+      "viewing_sessions": 3945173,
+      "sessions_on_channels_absent_from_period": 113854,
+      "sessions_on_channels_absent_from_period_pct": 2.886,
+      "viewing_rows": 3945173
+    },
+    "2": {
+      "week_range": "21-30",
+      "viewing_sessions": 1876814,
+      "sessions_on_channels_absent_from_period": 40549,
+      "sessions_on_channels_absent_from_period_pct": 2.161,
+      "viewing_rows": 1876814
+    },
+    "3": {
+      "week_range": "31-42",
+      "viewing_sessions": 0,
+      "sessions_on_channels_absent_from_period": 0,
+      "sessions_on_channels_absent_from_period_pct": 0.0,
+      "viewing_rows": 0
+    }
+  },
+  "zero_overlap_top_channels": [
+    {
+      "channel": 1521,
+      "sessions": 108304,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-04-27 05:30:00"
+    },
+    {
+      "channel": 1174,
+      "sessions": 86883,
+      "channel_in_union": false,
+      "first_schedule_start": null
+    },
+    {
+      "channel": 1519,
+      "sessions": 65752,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-04-27 06:10:00"
+    },
+    {
+      "channel": 1516,
+      "sessions": 43647,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-04-06 06:10:00"
+    },
+    {
+      "channel": 1528,
+      "sessions": 40446,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-06-01 06:00:00"
+    },
+    {
+      "channel": 1520,
+      "sessions": 33845,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-04-27 06:00:00"
+    },
+    {
+      "channel": 1510,
+      "sessions": 9357,
+      "channel_in_union": false,
+      "first_schedule_start": null
+    },
+    {
+      "channel": 1509,
+      "sessions": 8546,
+      "channel_in_union": false,
+      "first_schedule_start": null
+    },
+    {
+      "channel": 1508,
+      "sessions": 7491,
+      "channel_in_union": false,
+      "first_schedule_start": null
+    },
+    {
+      "channel": 823,
+      "sessions": 2387,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-03-09 00:00:00"
+    },
+    {
+      "channel": 911,
+      "sessions": 1541,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-05-25 05:55:00"
+    },
+    {
+      "channel": 149,
+      "sessions": 1302,
+      "channel_in_union": false,
+      "first_schedule_start": null
+    },
+    {
+      "channel": 763,
+      "sessions": 739,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-05-25 07:30:00"
+    },
+    {
+      "channel": 3,
+      "sessions": 382,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-03-09 06:00:00"
+    },
+    {
+      "channel": 108,
+      "sessions": 258,
+      "channel_in_union": true,
+      "first_schedule_start": "2020-03-09 05:00:00"
+    }
+  ],
+  "zero_overlap_top_start_dates": [
+    {
+      "date": "2020-03-22",
+      "sessions": 11877
+    },
+    {
+      "date": "2020-03-09",
+      "sessions": 11766
+    },
+    {
+      "date": "2020-03-15",
+      "sessions": 9625
+    },
+    {
+      "date": "2020-04-05",
+      "sessions": 9539
+    },
+    {
+      "date": "2020-03-29",
+      "sessions": 9476
+    },
+    {
+      "date": "2020-03-21",
+      "sessions": 9468
+    },
+    {
+      "date": "2020-03-24",
+      "sessions": 9190
+    },
+    {
+      "date": "2020-03-28",
+      "sessions": 8296
+    },
+    {
+      "date": "2020-03-14",
+      "sessions": 8232
+    },
+    {
+      "date": "2020-04-12",
+      "sessions": 8085
+    }
+  ],
+  "zero_overlap_by_start_hour": {
+    "0": 14710,
+    "1": 7019,
+    "2": 3697,
+    "3": 2595,
+    "4": 2557,
+    "5": 3376,
+    "6": 5240,
+    "7": 10095,
+    "8": 12509,
+    "9": 13631,
+    "10": 15313,
+    "11": 15915,
+    "12": 16687,
+    "13": 17285,
+    "14": 16523,
+    "15": 17534,
+    "16": 19744,
+    "17": 24217,
+    "18": 26437,
+    "19": 29168,
+    "20": 35650,
+    "21": 41273,
+    "22": 36765,
+    "23": 25449
+  },
+  "runtime_seconds": 31.28,
+  "peak_rss_mb": 149.7
+}

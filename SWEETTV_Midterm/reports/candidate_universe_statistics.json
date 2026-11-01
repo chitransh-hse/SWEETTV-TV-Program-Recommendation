@@ -1,0 +1,71 @@
+{
+  "generated_by": "src/audit_candidate_universe.py",
+  "method": "stdlib csv streaming; programme IDs preserved as exact strings",
+  "metadata_usable_definition": "non-empty tv_show_title plus at least one of category, genre_1..3, year_of_production, director, actors (values '0', empty, None, nan, null are treated as missing)",
+  "period_totals": {
+    "training_weeks_11_20": {
+      "programmes": 5847,
+      "rows": 115613
+    },
+    "validation_weeks_21_30": {
+      "programmes": 6363,
+      "rows": 121505
+    },
+    "test_weeks_31_42": {
+      "programmes": 6636,
+      "rows": 144774
+    },
+    "union": 9671
+  },
+  "membership": {
+    "training_only_vs_validation_and_test": 1061,
+    "training_only_vs_validation": 1871,
+    "shared_training_and_validation": 3976,
+    "validation_only_vs_training_and_test": 1258,
+    "validation_only_vs_training": 2387,
+    "test_only_not_in_training_or_validation": 1437,
+    "test_absent_from_training": 2566,
+    "test_shared_with_training": 4070,
+    "test_shared_with_validation": 4389,
+    "all_three_periods": 3260,
+    "training_and_test_but_not_validation": 810,
+    "validation_and_test_but_not_training": 1129,
+    "training_and_validation_but_not_test": 716
+  },
+  "test_metadata": {
+    "test_programmes": 6636,
+    "test_programmes_with_usable_metadata": 6636,
+    "test_programmes_without_usable_metadata": 0,
+    "cold_start_test_programmes": 2566,
+    "cold_start_with_usable_metadata": 2566,
+    "cold_start_without_usable_metadata": 0,
+    "field_coverage_test": {
+      "tv_show_title": 6636,
+      "tv_show_category": 6636,
+      "tv_show_genre_1": 6486,
+      "tv_show_genre_2": 4152,
+      "tv_show_genre_3": 1643,
+      "year_of_production": 6627,
+      "director": 6487,
+      "actors": 6510
+    },
+    "field_coverage_cold_start": {
+      "tv_show_title": 2566,
+      "tv_show_category": 2566,
+      "tv_show_genre_1": 2492,
+      "tv_show_genre_2": 1464,
+      "tv_show_genre_3": 525,
+      "year_of_production": 2563,
+      "director": 2537,
+      "actors": 2546
+    }
+  },
+  "notes": [
+    "Cold-start test programmes were retained; nothing was removed from the test universe.",
+    "Test viewing behaviour does not exist and was not used.",
+    "Programme IDs are strings; no ID was converted to float or signed 64-bit integer."
+  ],
+  "runtime_seconds": 8.67,
+  "peak_rss_mb": 25.6,
+  "python": "3.9.6"
+}

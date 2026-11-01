@@ -1,0 +1,162 @@
+{
+  "generated_by": "src/evaluate_stage3_models.py",
+  "selected": {
+    "method": "hybrid",
+    "config": "hybrid_1.00_0.20_0.05_repeat_recency+popularity+content_based",
+    "params": {
+      "components": [
+        "repeat_recency",
+        "popularity",
+        "content_based"
+      ],
+      "weights": {
+        "repeat_recency": 1.0,
+        "popularity": 0.2,
+        "content_based": 0.05
+      },
+      "rrf_k": 60,
+      "repeat_tau_days": 120.0,
+      "repeat_alpha": 1.0
+    },
+    "validation_map5": 0.634319,
+    "validation_recall5": 0.051449
+  },
+  "best_by_method": {
+    "popularity": {
+      "method": "popularity",
+      "config": "popularity_users",
+      "params": {
+        "variant": "users"
+      },
+      "map5": 0.572049,
+      "recall5": 0.046988,
+      "hit_rate": 0.902597,
+      "users_with_hit": 4309,
+      "users": 4774,
+      "catalog_coverage": 0.000786,
+      "runtime_seconds": 0.07,
+      "random_seed": null,
+      "deterministic": true
+    },
+    "content_based": {
+      "method": "content_based",
+      "config": "cbf_genre_log_sessions_k50",
+      "params": {
+        "feature_set": "genre",
+        "profile": "log_sessions",
+        "neighbor_k": 50,
+        "max_features": 173
+      },
+      "map5": 0.197621,
+      "recall5": 0.022356,
+      "hit_rate": 0.697319,
+      "users_with_hit": 3329,
+      "users": 4774,
+      "catalog_coverage": 0.153858,
+      "runtime_seconds": 0.459,
+      "random_seed": null,
+      "deterministic": true
+    },
+    "association_rules": {
+      "method": "association_rules",
+      "config": "ar_confidence_k50_sup5_pair5",
+      "params": {
+        "metric": "confidence",
+        "top_k": 50,
+        "min_support": 5,
+        "min_pair_support": 5,
+        "n_rules": 110387,
+        "avg_rules_per_item": 39.33
+      },
+      "map5": 0.570997,
+      "recall5": 0.046943,
+      "hit_rate": 0.902807,
+      "users_with_hit": 4310,
+      "users": 4774,
+      "catalog_coverage": 0.001572,
+      "runtime_seconds": 0.35,
+      "random_seed": null,
+      "deterministic": true
+    },
+    "repeat_recency": {
+      "method": "repeat_recency",
+      "config": "repeat_tau120_alpha1.0",
+      "params": {
+        "tau_days": 120.0,
+        "alpha": 1.0,
+        "score": "log1p(n_sessions)^alpha * exp(-days_since_last_view/tau)"
+      },
+      "map5": 0.622277,
+      "recall5": 0.050483,
+      "hit_rate": 0.921031,
+      "users_with_hit": 4397,
+      "users": 4774,
+      "catalog_coverage": 0.142071,
+      "runtime_seconds": 0.18,
+      "random_seed": null,
+      "deterministic": true
+    },
+    "hybrid": {
+      "method": "hybrid",
+      "config": "hybrid_1.00_0.20_0.05_repeat_recency+popularity+content_based",
+      "params": {
+        "components": [
+          "repeat_recency",
+          "popularity",
+          "content_based"
+        ],
+        "weights": {
+          "repeat_recency": 1.0,
+          "popularity": 0.2,
+          "content_based": 0.05
+        },
+        "rrf_k": 60,
+        "repeat_tau_days": 120.0,
+        "repeat_alpha": 1.0
+      },
+      "map5": 0.634319,
+      "recall5": 0.051449,
+      "hit_rate": 0.928571,
+      "users_with_hit": 4433,
+      "users": 4774,
+      "catalog_coverage": 0.102467,
+      "runtime_seconds": 0.115,
+      "random_seed": null,
+      "deterministic": true
+    }
+  },
+  "protocol": {
+    "train": "/Users/chitranshgupta/Downloads/SWEETTV_Midterm/outputs/temporal_interactions/train_strategyA_ruleB_60s_20pct.csv.gz",
+    "validation": "/Users/chitranshgupta/Downloads/SWEETTV_Midterm/outputs/temporal_interactions/validation_strategyA_ruleB_60s_20pct.csv.gz",
+    "candidate_universe": "weeks 21-30 labelled programmes",
+    "n_candidates": 6363,
+    "evaluation_users": 4774,
+    "metric": "MAP@5 (denominator min(|ground truth|, 5))",
+    "repeats_allowed": true,
+    "fallback": "training popularity by distinct users",
+    "ground_truth_items_outside_universe": 0,
+    "validation_used_for_training": false
+  },
+  "dataset": {
+    "train_pairs": 335816,
+    "train_users": 4823,
+    "train_items": 2807,
+    "validation_pairs": 312934,
+    "validation_users": 4774,
+    "validation_items": 3088,
+    "validation_users_without_training_history": 61,
+    "candidate_pids": 6363
+  },
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "platform": "darwin",
+    "gpu": "none"
+  },
+  "inputs_sha256": {
+    "train_pairs": "9bfef44135dafa5da427fe8b7da5dc00ff93f2ec2c07317c818d52a662121a79",
+    "validation_pairs": "a64a86f8bec77153ef4c8b316864e3162a816738656ab971acd7802c28edac89"
+  },
+  "fallback": "training popularity by distinct users",
+  "repeats_allowed": true
+}

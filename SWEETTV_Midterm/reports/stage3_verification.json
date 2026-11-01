@@ -1,0 +1,208 @@
+{
+  "generated_by": "src/verify_stage3.py",
+  "status": "complete",
+  "checks_passed": 33,
+  "checks_total": 33,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "Stage 2.5 verification still 323/323",
+      "passed": true,
+      "detail": "323/323"
+    },
+    {
+      "check": "source event store digest unchanged",
+      "passed": true,
+      "detail": "945863fae18d5b23"
+    },
+    {
+      "check": "temporal split DB digest unchanged",
+      "passed": true,
+      "detail": "395532d3a1324d63"
+    },
+    {
+      "check": "metadata projection digest unchanged",
+      "passed": true,
+      "detail": "c1f8a53e8020ab71"
+    },
+    {
+      "check": "main training data hash matches experiment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "main validation data hash matches experiment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no test-period viewing log is used",
+      "passed": true,
+      "detail": "only schedule 31-42 is read for the candidate universe"
+    },
+    {
+      "check": "validation used for scoring/selection only",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "selected model exists in experiment grid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "selected MAP@5 matches experiment",
+      "passed": true,
+      "detail": "0.634319"
+    },
+    {
+      "check": "experiment includes a popularity baseline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "experiment includes content-based filtering",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "experiment includes association rules",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "experiment includes a hybrid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "all reported metrics are finite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "submission header exact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "submission has exactly 1260 rows",
+      "passed": true,
+      "detail": "1260"
+    },
+    {
+      "check": "submission user IDs unique",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "submission preserves template order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "every row has exactly five IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no duplicate ID within a row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no tv_show_id=0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "all IDs numeric",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "all IDs in weeks 31-42 labelled universe",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "test candidate universe size 6636",
+      "passed": true,
+      "detail": "6636"
+    },
+    {
+      "check": "submission hash matches metadata",
+      "passed": true,
+      "detail": "b661738f2aecb928"
+    },
+    {
+      "check": "submission row count matches metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "selected model recorded in submission metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "external file unchanged: solution.csv",
+      "passed": true,
+      "detail": "ef7c25829560f849"
+    },
+    {
+      "check": "external file unchanged: solution_improved.csv",
+      "passed": true,
+      "detail": "cf075c2379a16215"
+    },
+    {
+      "check": "external file unchanged: final_submission.csv",
+      "passed": true,
+      "detail": "7c330b884d793404"
+    },
+    {
+      "check": "example recommendations cover two users",
+      "passed": true,
+      "detail": "10 rows"
+    },
+    {
+      "check": "example recommendations have five rows per user",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "digests": {
+    "submission_sha256": "b661738f2aecb928a133812f406edca98de7b7d55280d878c4449924fbca412e",
+    "train_pairs_sha256": "9bfef44135dafa5da427fe8b7da5dc00ff93f2ec2c07317c818d52a662121a79",
+    "validation_pairs_sha256": "a64a86f8bec77153ef4c8b316864e3162a816738656ab971acd7802c28edac89",
+    "source_event_store_sha256": "945863fae18d5b239d71879eb239ed99307f4c527a76a014056b6574ab2cd1e5"
+  },
+  "selected_model": {
+    "method": "hybrid",
+    "config": "hybrid_1.00_0.20_0.05_repeat_recency+popularity+content_based",
+    "params": {
+      "components": [
+        "repeat_recency",
+        "popularity",
+        "content_based"
+      ],
+      "weights": {
+        "repeat_recency": 1.0,
+        "popularity": 0.2,
+        "content_based": 0.05
+      },
+      "rrf_k": 60,
+      "repeat_tau_days": 120.0,
+      "repeat_alpha": 1.0
+    },
+    "validation_map5": 0.634319,
+    "validation_recall5": 0.051449
+  },
+  "submission": {
+    "path": "outputs/final_submission.csv",
+    "rows": 1260,
+    "distinct_programme_ids": 220,
+    "distinct_recommendation_lists": 1125,
+    "sha256": "b661738f2aecb928a133812f406edca98de7b7d55280d878c4449924fbca412e"
+  }
+}

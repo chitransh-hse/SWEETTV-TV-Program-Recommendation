@@ -1,0 +1,1109 @@
+{
+  "generated_by": "src/audit_stage1.py",
+  "viewing_log": {
+    "file": "dataset11-30.csv",
+    "size_bytes": 396216555,
+    "mtime_epoch": 1605673224,
+    "delimiter": ",",
+    "delimiter_counts_sample": {
+      ",": 3859,
+      ";": 0,
+      "\t": 0,
+      "|": 0
+    },
+    "encoding": "utf-8",
+    "bom": false,
+    "ascii_only": true,
+    "sha256": "8c9e5f058157041e5c33f13e64dc1625a5177cc6d5e434ba18cd8a69afafb53b",
+    "header_raw": "\"user_id\",\"vsetv_id\",\"start_time\",\"stop_time\",\"duraton\"",
+    "header": [
+      "user_id",
+      "vsetv_id",
+      "start_time",
+      "stop_time",
+      "duraton"
+    ],
+    "header_matches_expected": true,
+    "data_rows": 5821987,
+    "malformed_field_count": 0,
+    "malformed_field_count_examples": [],
+    "missing_user_id": 0,
+    "missing_vsetv_id": 0,
+    "missing_start_time": 0,
+    "missing_stop_time": 0,
+    "missing_duraton": 0,
+    "non_numeric_user_id": 0,
+    "non_numeric_vsetv_id": 0,
+    "non_numeric_duraton": 0,
+    "invalid_start_time": 0,
+    "invalid_stop_time": 0,
+    "stop_before_start": 0,
+    "stop_equals_start": 0,
+    "duraton_negative": 0,
+    "duraton_zero": 0,
+    "duraton_mismatch": 117,
+    "duraton_match_exact": 5821870,
+    "abs_diff_le_1s": 5821870,
+    "abs_diff_le_5s": 5821870,
+    "abs_diff_le_60s": 5821870,
+    "abs_diff_gt_60s": 117,
+    "sum_abs_diff_seconds": 421200,
+    "unique_users": 4914,
+    "unique_channels": 202,
+    "unique_start_dates": 139,
+    "unique_user_channel_pairs_hashed": 291943,
+    "duplicate_full_rows_hashed": 17,
+    "duplicate_user_channel_start_hashed": 122,
+    "duraton_mismatch_examples": [
+      {
+        "line": 1250165,
+        "user_id": "12466582247545246052",
+        "vsetv_id": "1521",
+        "start_time": "2020-03-28 22:47:45",
+        "stop_time": "2020-03-30 09:02:48",
+        "duraton": 119703,
+        "stop_minus_start_seconds": 123303,
+        "abs_difference_seconds": 3600
+      },
+      {
+        "line": 1250741,
+        "user_id": "10059425067810734795",
+        "vsetv_id": "7",
+        "start_time": "2020-03-28 22:56:59",
+        "stop_time": "2020-03-29 04:11:55",
+        "duraton": 15296,
+        "stop_minus_start_seconds": 18896,
+        "abs_difference_seconds": 3600
+      },
+      {
+        "line": 1254658,
+        "user_id": "12246241194532024321",
+        "vsetv_id": "921",
+        "start_time": "2020-03-29 00:15:15",
+        "stop_time": "2020-03-29 04:05:32",
+        "duraton": 10217,
+        "stop_minus_start_seconds": 13817,
+        "abs_difference_seconds": 3600
+      },
+      {
+        "line": 1255008,
+        "user_id": "6266399139997320035",
+        "vsetv_id": "1521",
+        "start_time": "2020-03-29 00:27:30",
+        "stop_time": "2020-03-29 04:06:25",
+        "duraton": 9535,
+        "stop_minus_start_seconds": 13135,
+        "abs_difference_seconds": 3600
+      },
+      {
+        "line": 1255487,
+        "user_id": "5842699175950256892",
+        "vsetv_id": "3",
+        "start_time": "2020-03-29 00:46:06",
+        "stop_time": "2020-03-29 04:35:40",
+        "duraton": 10174,
+        "stop_minus_start_seconds": 13774,
+        "abs_difference_seconds": 3600
+      }
+    ],
+    "duraton_mismatch_delta_counts": {
+      "-3600": 117
+    },
+    "duraton_mismatch_start_dates": {
+      "2020-03-28": 2,
+      "2020-03-29": 115
+    },
+    "min_start_time": "2020-03-09T00:00:02",
+    "max_start_time": "2020-07-26T23:58:42",
+    "min_stop_time": "2020-03-09T00:01:26",
+    "max_stop_time": "2020-07-26T23:59:58",
+    "duration_seconds": {
+      "count": 5821987,
+      "min": 61,
+      "max": 342145,
+      "mean": 1480.4594,
+      "median": 396,
+      "quantiles": {
+        "0.01": 62,
+        "0.25": 133,
+        "0.75": 1452,
+        "0.95": 6344,
+        "0.99": 14079
+      }
+    },
+    "non_ascii_bytes": 0,
+    "user_id_max_digits": 20,
+    "user_id_numeric_max": 18443832178892490378,
+    "user_ids_exceeding_int64": 2483
+  },
+  "schedules": {
+    "weeks_11_20": {
+      "file": "export_arh_11-20-final.csv",
+      "size_bytes": 153322643,
+      "mtime_epoch": 1605673254,
+      "delimiter": ",",
+      "delimiter_counts_sample": {
+        ",": 7864,
+        ";": 0,
+        "\t": 0,
+        "|": 0
+      },
+      "encoding": "utf-8",
+      "bom": false,
+      "ascii_only": false,
+      "sha256": "7888aa00c20db3db23f95000c721eccf2878e5f58bf5383bb25b99f078b1033c",
+      "header": [
+        "channel_id",
+        "channel_title",
+        "start_time",
+        "duration",
+        "tv_show_title",
+        "tv_show_id",
+        "tv_show_category",
+        "tv_show_genre_1",
+        "tv_show_genre_2",
+        "tv_show_genre_3",
+        "year_of_production",
+        "director",
+        "actors"
+      ],
+      "header_matches_expected": true,
+      "data_rows": 1074235,
+      "malformed_field_count": 0,
+      "malformed_field_count_examples": [],
+      "unique_channels": 400,
+      "unique_programme_ids": 5847,
+      "rows_tv_show_id_zero": 958622,
+      "rows_tv_show_id_missing": 0,
+      "rows_tv_show_id_non_numeric": 0,
+      "unlabelled_rows": 958622,
+      "unlabelled_pct": 89.2376,
+      "missing_titles": 0,
+      "missing_categories": 0,
+      "missing_genres_any": 1054059,
+      "missing_genres_all": 620089,
+      "missing_years": 959500,
+      "years_non_4digit": 53616,
+      "years_examples": [
+        "1996-",
+        "1996-",
+        "1996-",
+        "1996-",
+        "2010-"
+      ],
+      "missing_directors": 974050,
+      "missing_actors": 973861,
+      "missing_channel_ids": 0,
+      "missing_channel_titles": 0,
+      "invalid_start_times": 0,
+      "duration_non_numeric": 0,
+      "duration_non_positive": 1,
+      "duration_stats": {
+        "count": 1074235,
+        "min": 0,
+        "max": 86400,
+        "mean": 2229.9895,
+        "median": 1500
+      },
+      "duplicate_full_rows_hashed": 0,
+      "duplicate_channel_start_hashed": 1,
+      "min_start_time": "2020-03-08T23:00:00",
+      "max_start_time": "2020-05-18T11:45:00",
+      "metadata_conflicts_within_file": 66138,
+      "metadata_conflict_fields_within_file": {
+        "tv_show_title": 66029,
+        "tv_show_category": 0,
+        "tv_show_genre_1": 27,
+        "tv_show_genre_2": 65,
+        "tv_show_genre_3": 51,
+        "year_of_production": 2,
+        "director": 48,
+        "actors": 101
+      },
+      "labelled_rows": 115613,
+      "labelled_missing_titles": 0,
+      "labelled_missing_categories": 0,
+      "labelled_missing_genres_all": 5375,
+      "labelled_with_any_genre": 110238,
+      "labelled_missing_years": 878,
+      "labelled_missing_directors": 15428,
+      "labelled_missing_actors": 15239,
+      "programme_id_max": 360038157,
+      "programme_ids_exceeding_int32": 0,
+      "channel_id_max": 1521,
+      "total_duration_seconds": 2395532760,
+      "labelled_duration_seconds": 382478940,
+      "channels_with_multiple_titles": 3,
+      "non_ascii_bytes": 89188910,
+      "labelled_duration_pct": 15.9663
+    },
+    "weeks_21_30": {
+      "file": "export_arh_21-30-final.csv",
+      "size_bytes": 154366907,
+      "mtime_epoch": 1605673260,
+      "delimiter": ",",
+      "delimiter_counts_sample": {
+        ",": 7898,
+        ";": 0,
+        "\t": 0,
+        "|": 0
+      },
+      "encoding": "utf-8",
+      "bom": false,
+      "ascii_only": false,
+      "sha256": "bdc9fa9850239aaed608bece9cdb200011e690300470fe85b980457d8c0cb2d4",
+      "header": [
+        "channel_id",
+        "channel_title",
+        "start_time",
+        "duration",
+        "tv_show_title",
+        "tv_show_id",
+        "tv_show_category",
+        "tv_show_genre_1",
+        "tv_show_genre_2",
+        "tv_show_genre_3",
+        "year_of_production",
+        "director",
+        "actors"
+      ],
+      "header_matches_expected": true,
+      "data_rows": 1074394,
+      "malformed_field_count": 0,
+      "malformed_field_count_examples": [],
+      "unique_channels": 403,
+      "unique_programme_ids": 6363,
+      "rows_tv_show_id_zero": 952889,
+      "rows_tv_show_id_missing": 0,
+      "rows_tv_show_id_non_numeric": 0,
+      "unlabelled_rows": 952889,
+      "unlabelled_pct": 88.6908,
+      "missing_titles": 0,
+      "missing_categories": 0,
+      "missing_genres_any": 1050668,
+      "missing_genres_all": 616370,
+      "missing_years": 954382,
+      "years_non_4digit": 51935,
+      "years_examples": [
+        "1996-",
+        "1996-",
+        "1996-",
+        "1996-",
+        "2012-"
+      ],
+      "missing_directors": 969487,
+      "missing_actors": 968834,
+      "missing_channel_ids": 0,
+      "missing_channel_titles": 0,
+      "invalid_start_times": 0,
+      "duration_non_numeric": 0,
+      "duration_non_positive": 0,
+      "duration_stats": {
+        "count": 1074394,
+        "min": 60,
+        "max": 86400,
+        "mean": 2261.3062,
+        "median": 1500.0
+      },
+      "duplicate_full_rows_hashed": 0,
+      "duplicate_channel_start_hashed": 0,
+      "min_start_time": "2020-05-18T00:00:00",
+      "max_start_time": "2020-07-27T11:55:00",
+      "metadata_conflicts_within_file": 70148,
+      "metadata_conflict_fields_within_file": {
+        "tv_show_title": 69890,
+        "tv_show_category": 0,
+        "tv_show_genre_1": 76,
+        "tv_show_genre_2": 139,
+        "tv_show_genre_3": 115,
+        "year_of_production": 3,
+        "director": 160,
+        "actors": 175
+      },
+      "labelled_rows": 121505,
+      "labelled_missing_titles": 0,
+      "labelled_missing_categories": 0,
+      "labelled_missing_genres_all": 5412,
+      "labelled_with_any_genre": 116093,
+      "labelled_missing_years": 1493,
+      "labelled_missing_directors": 16598,
+      "labelled_missing_actors": 15945,
+      "programme_id_max": 120082833,
+      "programme_ids_exceeding_int32": 0,
+      "channel_id_max": 1531,
+      "total_duration_seconds": 2429533800,
+      "labelled_duration_seconds": 410590740,
+      "channels_with_multiple_titles": 3,
+      "non_ascii_bytes": 90059136,
+      "labelled_duration_pct": 16.9
+    },
+    "weeks_31_42": {
+      "file": "export_arh_31-42-final.csv",
+      "size_bytes": 185952991,
+      "mtime_epoch": 1605673266,
+      "delimiter": ",",
+      "delimiter_counts_sample": {
+        ",": 7519,
+        ";": 0,
+        "\t": 0,
+        "|": 0
+      },
+      "encoding": "utf-8",
+      "bom": false,
+      "ascii_only": false,
+      "sha256": "5cc01f4619bd94886d83744f00bbc15cc5fa23384d297244a7dc2207450c4088",
+      "header": [
+        "channel_id",
+        "channel_title",
+        "start_time",
+        "duration",
+        "tv_show_title",
+        "tv_show_id",
+        "tv_show_category",
+        "tv_show_genre_1",
+        "tv_show_genre_2",
+        "tv_show_genre_3",
+        "year_of_production",
+        "director",
+        "actors"
+      ],
+      "header_matches_expected": true,
+      "data_rows": 1295378,
+      "malformed_field_count": 0,
+      "malformed_field_count_examples": [],
+      "unique_channels": 404,
+      "unique_programme_ids": 6636,
+      "rows_tv_show_id_zero": 1150604,
+      "rows_tv_show_id_missing": 0,
+      "rows_tv_show_id_non_numeric": 0,
+      "unlabelled_rows": 1150604,
+      "unlabelled_pct": 88.8238,
+      "missing_titles": 0,
+      "missing_categories": 0,
+      "missing_genres_any": 1266621,
+      "missing_genres_all": 737871,
+      "missing_years": 1151706,
+      "years_non_4digit": 64162,
+      "years_examples": [
+        "1996-",
+        "1996-",
+        "1996-",
+        "1996-",
+        "2011-"
+      ],
+      "missing_directors": 1170189,
+      "missing_actors": 1169519,
+      "missing_channel_ids": 0,
+      "missing_channel_titles": 0,
+      "invalid_start_times": 0,
+      "duration_non_numeric": 0,
+      "duration_non_positive": 0,
+      "duration_stats": {
+        "count": 1295378,
+        "min": 60,
+        "max": 43200,
+        "mean": 2263.1395,
+        "median": 1500.0
+      },
+      "duplicate_full_rows_hashed": 0,
+      "duplicate_channel_start_hashed": 0,
+      "min_start_time": "2020-07-27T00:00:00",
+      "max_start_time": "2020-10-19T11:55:00",
+      "metadata_conflicts_within_file": 78970,
+      "metadata_conflict_fields_within_file": {
+        "tv_show_title": 78705,
+        "tv_show_category": 0,
+        "tv_show_genre_1": 70,
+        "tv_show_genre_2": 160,
+        "tv_show_genre_3": 98,
+        "year_of_production": 10,
+        "director": 163,
+        "actors": 108
+      },
+      "labelled_rows": 144774,
+      "labelled_missing_titles": 0,
+      "labelled_missing_categories": 0,
+      "labelled_missing_genres_all": 5695,
+      "labelled_with_any_genre": 139079,
+      "labelled_missing_years": 1102,
+      "labelled_missing_directors": 19585,
+      "labelled_missing_actors": 18915,
+      "programme_id_max": 120082833,
+      "programme_ids_exceeding_int32": 0,
+      "channel_id_max": 1541,
+      "total_duration_seconds": 2931621180,
+      "labelled_duration_seconds": 488761680,
+      "channels_with_multiple_titles": 3,
+      "non_ascii_bytes": 108495313,
+      "labelled_duration_pct": 16.6721
+    }
+  },
+  "submission": {
+    "file": "submission.csv",
+    "size_bytes": 38348,
+    "sha256": "d8c209dce3c7c9d815d8e2a6226e1be63052ee7afa7e8ba8b75dc2f703967a02",
+    "encoding": "utf-8",
+    "bom": false,
+    "delimiter": ",",
+    "header_present": true,
+    "header_raw": "user_id,tv_show_id",
+    "columns": [
+      "user_id",
+      "tv_show_id"
+    ],
+    "data_rows": 1260,
+    "unique_users": 1260,
+    "duplicate_user_rows": 0,
+    "rows_with_five_tokens": 1260,
+    "rows_with_other_token_count": 0,
+    "token_count_distribution": {
+      "5": 1260
+    },
+    "non_integer_tokens": 0,
+    "all_zero_rows": 1260,
+    "rows_with_nonzero_tokens": 0,
+    "distinct_nonzero_programme_ids": 0,
+    "token_min": 0,
+    "token_max": 0,
+    "user_id_min_length": 17,
+    "user_id_max_length": 20,
+    "example_rows": [
+      [
+        "8377619604347126107",
+        "0 0 0 0 0"
+      ],
+      [
+        "8381667675275833309",
+        "0 0 0 0 0"
+      ],
+      [
+        "8387147770138767246",
+        "0 0 0 0 0"
+      ],
+      [
+        "8397181578236218580",
+        "0 0 0 0 0"
+      ],
+      [
+        "8404698046253197367",
+        "0 0 0 0 0"
+      ]
+    ],
+    "distinct_token_values": 1
+  },
+  "cross_file": {
+    "viewing_unique_channels": 202,
+    "schedule_unique_channels": 405,
+    "schedule_channels_present_in_viewing": 197,
+    "schedule_channels_absent_from_viewing": 208,
+    "viewing_channels_present_in_schedule": 197,
+    "viewing_channels_absent_from_schedule": 5,
+    "viewing_channels_absent_from_schedule_detail": {
+      "149": 1302,
+      "1174": 86883,
+      "1508": 7491,
+      "1509": 8546,
+      "1510": 9357
+    },
+    "viewing_rows_on_channels_absent_from_schedule": 113579,
+    "viewing_rows_on_channels_present_in_schedule": 5708408,
+    "viewing_row_pct_on_matched_channels": 98.0491,
+    "schedule_channels_not_in_viewing": [
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      17,
+      21,
+      22,
+      30,
+      31,
+      32,
+      33,
+      34,
+      38,
+      45,
+      48,
+      49,
+      56,
+      68,
+      82,
+      89,
+      90,
+      91,
+      99,
+      123,
+      124,
+      142,
+      146,
+      176,
+      177,
+      213,
+      214,
+      216,
+      235,
+      237,
+      238,
+      241,
+      242,
+      243,
+      244,
+      246,
+      255,
+      260,
+      263,
+      270,
+      272,
+      278,
+      284,
+      286,
+      288,
+      292,
+      293,
+      301,
+      302,
+      303,
+      305,
+      308,
+      309,
+      310,
+      311,
+      312,
+      316,
+      327,
+      328,
+      329,
+      331,
+      334,
+      341,
+      350,
+      355,
+      381,
+      383,
+      384,
+      390,
+      394,
+      413,
+      414,
+      415,
+      432,
+      433,
+      439,
+      443,
+      454,
+      459,
+      476,
+      484,
+      487,
+      491,
+      507,
+      534,
+      590,
+      591,
+      599,
+      601,
+      602,
+      603,
+      604,
+      605,
+      608,
+      627,
+      637,
+      639,
+      643,
+      648,
+      649,
+      651,
+      653,
+      656,
+      667,
+      669,
+      681,
+      682,
+      687,
+      688,
+      689,
+      691,
+      693,
+      694,
+      703,
+      707,
+      711,
+      712,
+      719,
+      724,
+      732,
+      747,
+      752,
+      753,
+      757,
+      770,
+      774,
+      781,
+      783,
+      798,
+      800,
+      804,
+      808,
+      812,
+      825,
+      829,
+      832,
+      838,
+      839,
+      841,
+      842,
+      845,
+      858,
+      867,
+      871,
+      880,
+      889,
+      900,
+      901,
+      902,
+      905,
+      910,
+      917,
+      924,
+      934,
+      938,
+      946,
+      952,
+      961,
+      962,
+      963,
+      993,
+      994,
+      995,
+      996,
+      998,
+      999,
+      1014,
+      1022,
+      1026,
+      1037,
+      1040,
+      1045,
+      1058,
+      1060,
+      1061,
+      1062,
+      1075,
+      1077,
+      1102,
+      1117,
+      1121,
+      1138,
+      1149,
+      1150,
+      1151,
+      1175,
+      1177,
+      1178,
+      1188,
+      1208,
+      1209,
+      1214,
+      1215,
+      1216,
+      1223,
+      1227,
+      1238,
+      1299,
+      1310,
+      1377,
+      1541
+    ],
+    "viewing_channels_not_in_schedule": [
+      149,
+      1174,
+      1508,
+      1509,
+      1510
+    ],
+    "period_channel_coverage": {
+      "weeks_11_20": {
+        "schedule_channels": 400,
+        "viewing_channels_present": 193,
+        "viewing_channels_absent": [
+          149,
+          763,
+          911,
+          1174,
+          1508,
+          1509,
+          1510,
+          1528,
+          1531
+        ],
+        "viewing_rows_on_absent_channels": 170614
+      },
+      "weeks_21_30": {
+        "schedule_channels": 403,
+        "viewing_channels_present": 196,
+        "viewing_channels_absent": [
+          149,
+          823,
+          1174,
+          1508,
+          1509,
+          1510
+        ],
+        "viewing_rows_on_absent_channels": 116797
+      },
+      "weeks_31_42": {
+        "schedule_channels": 404,
+        "viewing_channels_present": 196,
+        "viewing_channels_absent": [
+          149,
+          823,
+          1174,
+          1508,
+          1509,
+          1510
+        ],
+        "viewing_rows_on_absent_channels": 116797
+      }
+    },
+    "schedule_period_boundary_overlap": {
+      "weeks_11_20__weeks_21_30": {
+        "shared_channel_start_slots": 0,
+        "first_file_slots": 1074234,
+        "second_file_slots": 1074394
+      },
+      "weeks_21_30__weeks_31_42": {
+        "shared_channel_start_slots": 0,
+        "first_file_slots": 1074394,
+        "second_file_slots": 1295378
+      }
+    },
+    "schedule_programme_ids_total": 9671,
+    "schedule_id_period_overlaps": {
+      "weeks_11_20__weeks_21_30": {
+        "intersection": 3976,
+        "only_in_first": 1871,
+        "only_in_second": 2387,
+        "jaccard": 0.4829
+      },
+      "weeks_11_20__weeks_31_42": {
+        "intersection": 4070,
+        "only_in_first": 1777,
+        "only_in_second": 2566,
+        "jaccard": 0.4838
+      },
+      "weeks_21_30__weeks_31_42": {
+        "intersection": 4389,
+        "only_in_first": 1974,
+        "only_in_second": 2247,
+        "jaccard": 0.5098
+      }
+    },
+    "new_programme_ids": {
+      "weeks_21_30_vs_weeks_11_20": 2387,
+      "weeks_31_42_vs_weeks_11_20": 2566,
+      "weeks_31_42_vs_weeks_11_20_and_21_30": 1437,
+      "weeks_31_42_never_seen_before": 1437,
+      "in_all_three_periods": 3260,
+      "in_any_period": 9671
+    },
+    "metadata_consistency_across_periods": {
+      "weeks_11_20__weeks_21_30": {
+        "common_programme_ids": 3976,
+        "ids_with_any_difference": 1369,
+        "field_difference_counts": {
+          "tv_show_title": 1296,
+          "tv_show_category": 0,
+          "tv_show_genre_1": 28,
+          "tv_show_genre_2": 42,
+          "tv_show_genre_3": 32,
+          "year_of_production": 5,
+          "director": 36,
+          "actors": 53
+        },
+        "examples": [
+          {
+            "tv_show_id": 10002443,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Анна Герман', 1 и 2 с.",
+                "second": "Т/с 'Анна Герман', 1 с."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 90046477,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Х/ф 'Из жизни тайных агентов', 1 ч.",
+                "second": "Х/ф 'Из жизни тайных агентов'."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 10002446,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Прокурорская проверка', 259 с. 'Последняя остановка'.",
+                "second": "Т/с 'Прокурорская проверка'."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 10002451,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Великолепный векПсы под прикрытием'.",
+                "second": "Т/с 'Великолепный век', 83 и 84 с."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 10002454,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Гримм', 1 сезон, 1 и 2 с.",
+                "second": "Т/с 'Гримм', 1 сезон, 21 и 22 с."
+              }
+            ]
+          }
+        ]
+      },
+      "weeks_11_20__weeks_31_42": {
+        "common_programme_ids": 4070,
+        "ids_with_any_difference": 1250,
+        "field_difference_counts": {
+          "tv_show_title": 1097,
+          "tv_show_category": 0,
+          "tv_show_genre_1": 48,
+          "tv_show_genre_2": 101,
+          "tv_show_genre_3": 70,
+          "year_of_production": 6,
+          "director": 51,
+          "actors": 104
+        },
+        "examples": [
+          {
+            "tv_show_id": 120078337,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "М/ф 'Шрэк навсегда'.",
+                "second": "Kids' Time. М/ф 'Шрэк навсегда'."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 120078341,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "М/ф 'Хранители снов'.",
+                "second": "Kids' Time. М/ф 'Хранители снов'."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 90046477,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Х/ф 'Из жизни тайных агентов', 1 ч.",
+                "second": "Х/ф 'Из жизни тайных агентов'."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 10002446,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Прокурорская проверка', 259 с. 'Последняя остановка'.",
+                "second": "Т/с 'Прокурорская проверка'."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 10002451,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Великолепный векПсы под прикрытием'.",
+                "second": "Т/с 'Великолепный век', 123 и 124 с."
+              }
+            ]
+          }
+        ]
+      },
+      "weeks_21_30__weeks_31_42": {
+        "common_programme_ids": 4389,
+        "ids_with_any_difference": 1476,
+        "field_difference_counts": {
+          "tv_show_title": 1380,
+          "tv_show_category": 0,
+          "tv_show_genre_1": 29,
+          "tv_show_genre_2": 70,
+          "tv_show_genre_3": 46,
+          "year_of_production": 5,
+          "director": 35,
+          "actors": 58
+        },
+        "examples": [
+          {
+            "tv_show_id": 120078337,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "М/ф 'Шрэк навсегда'.",
+                "second": "Kids' Time. М/ф 'Шрэк навсегда'."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 120078341,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "М/ф 'Хранители снов'.",
+                "second": "Kids' Time. М/ф 'Хранители снов'."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 10002443,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Анна Герман', 1 с.",
+                "second": "Т/с 'Анна Герман', 1 и 2 с."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 10002444,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Под прикрытием', 1 с.",
+                "second": "Т/с 'Под прикрытием', 1-3 с."
+              }
+            ]
+          },
+          {
+            "tv_show_id": 10002451,
+            "differences": [
+              {
+                "field": "tv_show_title",
+                "first": "Т/с 'Великолепный век', 83 и 84 с.",
+                "second": "Т/с 'Великолепный век', 123 и 124 с."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "timestamp_formats": {
+      "viewing": "YYYY-MM-DD HH:MM:SS (e.g. 2020-03-09 00:00:02)",
+      "schedule": "DD.MM.YYYY HH:MM:SS (e.g. 09.03.2020 06:00:00)",
+      "compatible_directly": false
+    },
+    "timestamp_ranges": {
+      "viewing_start_min": "2020-03-09T00:00:02",
+      "viewing_start_max": "2020-07-26T23:58:42",
+      "viewing_stop_min": "2020-03-09T00:01:26",
+      "viewing_stop_max": "2020-07-26T23:59:58",
+      "weeks_11_20_schedule_min": "2020-03-08T23:00:00",
+      "weeks_21_30_schedule_min": "2020-05-18T00:00:00",
+      "weeks_31_42_schedule_min": "2020-07-27T00:00:00",
+      "weeks_11_20_schedule_max": "2020-05-18T11:45:00",
+      "weeks_21_30_schedule_max": "2020-07-27T11:55:00",
+      "weeks_31_42_schedule_max": "2020-10-19T11:55:00"
+    },
+    "submission_users_in_viewing_log": 1260,
+    "submission_users_total": 1260,
+    "submission_users_missing_from_viewing_log": 0,
+    "submission_user_overlap_pct": 100.0,
+    "submission_nonzero_ids_in_schedule": 0,
+    "submission_nonzero_ids_not_in_schedule": 0,
+    "submission_nonzero_ids_distinct": 0,
+    "timestamp_alignment": {
+      "method": "nearest schedule programme start on the same channel; viewing rows sampled every 10",
+      "sample_rows": 570782,
+      "offsets": {
+        "-10800": {
+          "match_within_120s": 37017,
+          "match_within_120s_pct": 6.4853,
+          "match_within_300s_pct": 15.5231,
+          "mean_nearest_start_delta_s": 119672.88
+        },
+        "-7200": {
+          "match_within_120s": 37390,
+          "match_within_120s_pct": 6.5507,
+          "match_within_300s_pct": 15.6925,
+          "mean_nearest_start_delta_s": 119840.8
+        },
+        "-3600": {
+          "match_within_120s": 37703,
+          "match_within_120s_pct": 6.6055,
+          "match_within_300s_pct": 15.9038,
+          "mean_nearest_start_delta_s": 120005.19
+        },
+        "-1800": {
+          "match_within_120s": 38211,
+          "match_within_120s_pct": 6.6945,
+          "match_within_300s_pct": 16.2272,
+          "mean_nearest_start_delta_s": 120071.12
+        },
+        "0": {
+          "match_within_120s": 41704,
+          "match_within_120s_pct": 7.3065,
+          "match_within_300s_pct": 17.5985,
+          "mean_nearest_start_delta_s": 120118.99
+        },
+        "1800": {
+          "match_within_120s": 38841,
+          "match_within_120s_pct": 6.8049,
+          "match_within_300s_pct": 16.4551,
+          "mean_nearest_start_delta_s": 120228.65
+        },
+        "3600": {
+          "match_within_120s": 39385,
+          "match_within_120s_pct": 6.9002,
+          "match_within_300s_pct": 16.5077,
+          "mean_nearest_start_delta_s": 120351.15
+        },
+        "7200": {
+          "match_within_120s": 40499,
+          "match_within_120s_pct": 7.0954,
+          "match_within_300s_pct": 17.0438,
+          "mean_nearest_start_delta_s": 120520.35
+        },
+        "10800": {
+          "match_within_120s": 40580,
+          "match_within_120s_pct": 7.1095,
+          "match_within_300s_pct": 17.0324,
+          "mean_nearest_start_delta_s": 120717.57
+        }
+      },
+      "best_offset_seconds": 0,
+      "best_match_within_120s_pct": 7.3065,
+      "margin_over_second_best_pp": 0.197,
+      "interpretation": "Best agreement at offset 0 s, but the margin is small (0.20 pp); this is weak supporting evidence only, not proof that the clocks are identical."
+    }
+  },
+  "audit_run": {
+    "started_at_epoch": 1793451574,
+    "runtime_seconds": 107.04,
+    "peak_rss_mb": 717.3,
+    "python": "3.9.6",
+    "method": "stdlib csv streaming; no full-file pandas load; no files modified"
+  }
+}

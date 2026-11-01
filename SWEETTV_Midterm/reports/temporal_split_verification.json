@@ -1,0 +1,1984 @@
+{
+  "generated_by": "src/verify_temporal_split.py",
+  "timestamp_utc": "2026-11-01 10:46:18",
+  "checks_total": 323,
+  "checks_passed": 323,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "Stage 2 event store is byte-for-byte unchanged (ordered SHA-256)",
+      "passed": true,
+      "violations": 0,
+      "detail": "945863fae18d5b239d71879eb239ed99307f4c527a76a014056b6574ab2cd1e5, 3847696 events"
+    },
+    {
+      "check": "Stage 2 event store row count unchanged",
+      "passed": true,
+      "violations": 0,
+      "detail": "3847696 rows"
+    },
+    {
+      "check": "no test-period viewing behaviour exists in the event store",
+      "passed": true,
+      "violations": 0,
+      "detail": "latest viewing start is 2020-07-26 23:59:58"
+    },
+    {
+      "check": "source event store has no duplicate (session, programme, airing start)",
+      "passed": true,
+      "violations": 0,
+      "detail": "seam duplication guard"
+    },
+    {
+      "check": "training events contain only weeks 11-20 airings",
+      "passed": true,
+      "violations": 0,
+      "detail": "2384996 events"
+    },
+    {
+      "check": "validation events contain only weeks 21-30 airings",
+      "passed": true,
+      "violations": 0,
+      "detail": "1462508 events"
+    },
+    {
+      "check": "every event's session is assigned to the event's period",
+      "passed": true,
+      "violations": 0,
+      "detail": "one period per session"
+    },
+    {
+      "check": "no session appears in both training and validation",
+      "passed": true,
+      "violations": 0,
+      "detail": "1898828 training / 1065518 validation sessions"
+    },
+    {
+      "check": "no test-period (weeks 31-42) airing is used",
+      "passed": true,
+      "violations": 0,
+      "detail": "period labels are 1/2 only"
+    },
+    {
+      "check": "retained + excluded events reconcile with Stage 2 event store",
+      "passed": true,
+      "violations": 0,
+      "detail": "2384996 + 1462508 + 192 = 3847696"
+    },
+    {
+      "check": "exactly 192 cross-period events were excluded",
+      "passed": true,
+      "violations": 0,
+      "detail": "192 excluded"
+    },
+    {
+      "check": "session assignment covers every matched session once",
+      "passed": true,
+      "violations": 0,
+      "detail": "2964346 sessions"
+    },
+    {
+      "check": "session assignment key is unique",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "boundary sessions assigned deterministically (97; 97 train, 0 validation)",
+      "passed": true,
+      "violations": 0,
+      "detail": "97 cross, 97 train, 0 validation"
+    },
+    {
+      "check": "metadata documents the earliest-matched-airing boundary rule",
+      "passed": true,
+      "violations": 0,
+      "detail": "earliest_matched_airing"
+    },
+    {
+      "check": "every session is assigned to the period of its earliest matched airing (pstart ASC, then period ASC)",
+      "passed": true,
+      "violations": 0,
+      "detail": "argmin(pstart, period) recomputed from Stage 2 events"
+    },
+    {
+      "check": "assigned period's recorded first airing start equals its true minimum",
+      "passed": true,
+      "violations": 0,
+      "detail": "first_pstart is the per-period minimum, not a global value"
+    },
+    {
+      "check": "cross-period sessions retain no event from the other period",
+      "passed": true,
+      "violations": 0,
+      "detail": "retained events of boundary sessions are materialised"
+    },
+    {
+      "check": "training airings lie inside the source export span",
+      "passed": true,
+      "violations": 0,
+      "detail": "2020-03-08 23:00:00 .. 2020-05-18 12:00:00"
+    },
+    {
+      "check": "validation airings lie inside the source export span",
+      "passed": true,
+      "violations": 0,
+      "detail": "2020-05-18 00:00:00 .. 2020-07-27 12:00:00"
+    },
+    {
+      "check": "events_train: overlap > 0 and <= programme duration",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "events_train: ratio equals overlap / duration",
+      "passed": true,
+      "violations": 0,
+      "detail": "tolerance 1e-9"
+    },
+    {
+      "check": "events_train: no tv_show_id = 0 or empty",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "events_train: IDs stored as TEXT",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "events_train: no duplicate (session, programme, airing start)",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "events_validation: overlap > 0 and <= programme duration",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "events_validation: ratio equals overlap / duration",
+      "passed": true,
+      "violations": 0,
+      "detail": "tolerance 1e-9"
+    },
+    {
+      "check": "events_validation: no tv_show_id = 0 or empty",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "events_validation: IDs stored as TEXT",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "events_validation: no duplicate (session, programme, airing start)",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "events_train: sampled events cite a real schedule row in the same export",
+      "passed": true,
+      "violations": 0,
+      "detail": "2427 sampled (view_id % 1000 == 0)"
+    },
+    {
+      "check": "events_validation: sampled events cite a real schedule row in the same export",
+      "passed": true,
+      "violations": 0,
+      "detail": "1542 sampled (view_id % 1000 == 0)"
+    },
+    {
+      "check": "no empty user/programme strings in split events",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "metadata lists all 24 split x strategy x rule combinations",
+      "passed": true,
+      "violations": 0,
+      "detail": "24 entries"
+    },
+    {
+      "check": "metadata marks outputs provisional",
+      "passed": true,
+      "violations": 0,
+      "detail": "PROVISIONAL — no final threshold or strategy selected"
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "449135 rows"
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "449135 vs 449135"
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1212463 vs 1212463"
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1212463 vs 1212463"
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleA_60s_10pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "335816 rows"
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "335816 vs 335816"
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "889080 vs 889080"
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "889080 vs 889080"
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleB_60s_20pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "335621 rows"
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "335621 vs 335621"
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "886737 vs 886737"
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "886737 vs 886737"
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleC_120s_20pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "177846 rows"
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "177846 vs 177846"
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "479571 vs 479571"
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "479571 vs 479571"
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyA_ruleD_120s_50pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "383983 rows"
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "383983 vs 383983"
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "907306 vs 907306"
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1212463 vs 1212463"
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleA_60s_10pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "288303 rows"
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "288303 vs 288303"
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "651551 vs 651551"
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "889080 vs 889080"
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleB_60s_20pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "288094 rows"
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "288094 vs 288094"
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "650227 vs 650227"
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "886737 vs 886737"
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleC_120s_20pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "153695 rows"
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "153695 vs 153695"
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "337701 vs 337701"
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "479571 vs 479571"
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyB_ruleD_120s_50pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "379701 rows"
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "379701 vs 379701"
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "907306 vs 907306"
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "1212463 vs 1212463"
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleA_60s_10pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "284259 rows"
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "284259 vs 284259"
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "651551 vs 651551"
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "889080 vs 889080"
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleB_60s_20pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "284065 rows"
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "284065 vs 284065"
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "650227 vs 650227"
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "886737 vs 886737"
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleC_120s_20pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "151315 rows"
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: every (user, programme) row matches a recomputation from events_train only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "151315 vs 151315"
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "337701 vs 337701"
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "479571 vs 479571"
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "train_strategyC_ruleD_120s_50pct.csv.gz: no validation event contributes to this training aggregate",
+      "passed": true,
+      "violations": 0,
+      "detail": "recomputed from events_train (weeks 11-20) only"
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "390530 rows"
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "390530 vs 390530"
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "817260 vs 817260"
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "817260 vs 817260"
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleA_60s_10pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "312934 rows"
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "312934 vs 312934"
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "639757 vs 639757"
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "639757 vs 639757"
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleB_60s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "312853 rows"
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "312853 vs 312853"
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "638974 vs 638974"
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "638974 vs 638974"
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleC_120s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "197399 rows"
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "197399 vs 197399"
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "405185 vs 405185"
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "405185 vs 405185"
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyA_ruleD_120s_50pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "287538 rows"
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "287538 vs 287538"
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "518298 vs 518298"
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "817260 vs 817260"
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleA_60s_10pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "224560 rows"
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "224560 vs 224560"
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "382290 vs 382290"
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "639757 vs 639757"
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleB_60s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "224473 rows"
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "224473 vs 224473"
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "381832 vs 381832"
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "638974 vs 638974"
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleC_120s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "137645 rows"
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "137645 vs 137645"
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "221403 vs 221403"
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "405185 vs 405185"
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyB_ruleD_120s_50pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "283940 rows"
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "283940 vs 283940"
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "518298 vs 518298"
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "817260 vs 817260"
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleA_60s_10pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "221036 rows"
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "221036 vs 221036"
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "382290 vs 382290"
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "639757 vs 639757"
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleB_60s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "220956 rows"
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "220956 vs 220956"
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "381832 vs 381832"
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "638974 vs 638974"
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleC_120s_20pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: header and parseable rows",
+      "passed": true,
+      "violations": 0,
+      "detail": "135339 rows"
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: every (user, programme) row matches a recomputation from events_validation only",
+      "passed": true,
+      "violations": 0,
+      "detail": "leakage guard: aggregates derive only from the split table"
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: no duplicate user-programme pairs",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: IDs are exact source strings (no float/int64 conversion)",
+      "passed": true,
+      "violations": 0,
+      "detail": "all IDs found verbatim in source events / schedule"
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: deterministic ascending order",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: timestamps ordered and inside the viewing window",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: row count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "135339 vs 135339"
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: event sum matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "221403 vs 221403"
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: candidate count matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "405185 vs 405185"
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: file SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "validation_strategyC_ruleD_120s_50pct.csv.gz: content SHA-256 matches metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": ""
+    },
+    {
+      "check": "aggregate event totals are bounded by split event tables",
+      "passed": true,
+      "violations": 0,
+      "detail": "8561421 train aggregate events, 5508822 validation"
+    },
+    {
+      "check": "candidate universe CSV has one row per programme ID",
+      "passed": true,
+      "violations": 0,
+      "detail": "9671 IDs"
+    },
+    {
+      "check": "candidate universe equals the union of the three schedule PID sets",
+      "passed": true,
+      "violations": 0,
+      "detail": "CSV 9671, schedules 9671"
+    },
+    {
+      "check": "candidate universe period membership matches the schedules",
+      "passed": true,
+      "violations": 0,
+      "detail": "train 5847, validation 6363, test 6636"
+    },
+    {
+      "check": "all 6,636 test programmes are retained (no cold-start removal)",
+      "passed": true,
+      "violations": 0,
+      "detail": "6636 test programmes"
+    },
+    {
+      "check": "test-only cold-start programmes retained",
+      "passed": true,
+      "violations": 0,
+      "detail": "2566 test programmes absent from training"
+    },
+    {
+      "check": "every test programme has usable metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "6636/6636 usable"
+    },
+    {
+      "check": "every cold-start test programme has usable metadata",
+      "passed": true,
+      "violations": 0,
+      "detail": "2566/2566 usable"
+    },
+    {
+      "check": "universe statistics: training-only / shared / validation-only / test-only",
+      "passed": true,
+      "violations": 0,
+      "detail": "1,061 / 3,976 / 1,258 / 1,437"
+    },
+    {
+      "check": "repeat run: temporal split database identical",
+      "passed": true,
+      "violations": 0,
+      "detail": "395532d3a1324d633fe6349e68dc201838bec655f02f56a885dec17f79c6c472"
+    },
+    {
+      "check": "repeat run: all 24 datasets identical",
+      "passed": true,
+      "violations": 0,
+      "detail": "none"
+    },
+    {
+      "check": "repeat run: metadata (excluding runtime) identical",
+      "passed": true,
+      "violations": 0,
+      "detail": "c1f8a53e8020ab71a16e8d3e3b1b4a4e8aaad34f6f2c8f1ad5b686df521ac9c1"
+    }
+  ],
+  "digests": {
+    "source_event_store_sha256": "945863fae18d5b239d71879eb239ed99307f4c527a76a014056b6574ab2cd1e5",
+    "temporal_split_db_sha256": "395532d3a1324d633fe6349e68dc201838bec655f02f56a885dec17f79c6c472",
+    "temporal_split_db_rows": {
+      "session_assignment": 2964346,
+      "events_train": 2384996,
+      "events_validation": 1462508
+    },
+    "datasets": {
+      "train_strategyA_ruleA_60s_10pct.csv.gz": "62bdd222f66d235498ccf6e6395a020c969d87ba30765848f2d17b2bc952700e",
+      "train_strategyA_ruleB_60s_20pct.csv.gz": "aa2e6d9ad3c56820962b79ddeb5ae68c69c69395af454a50652a62c1251bfbdd",
+      "train_strategyA_ruleC_120s_20pct.csv.gz": "b75afdc3d9c4e45efb4b9c716646d9608823cba938e3b3bc066cab8f1d7624b6",
+      "train_strategyA_ruleD_120s_50pct.csv.gz": "a884a6e0bf3d4ce8f567656bf2126d6c286db0f42cc1f3e6291218d4a6e53e51",
+      "train_strategyB_ruleA_60s_10pct.csv.gz": "9625f867647b72615831a35457c2742d6c1e882572d4af4a2713517f6e17e05b",
+      "train_strategyB_ruleB_60s_20pct.csv.gz": "a7bdeb428f1dbc76c12f96fe00c27abdf379cdc0bd65be2432f46c507a2e47bf",
+      "train_strategyB_ruleC_120s_20pct.csv.gz": "bdcf81ac8ec9eff5297a0d4efa29d35cd55395fb3f65fa8adfa2b37d760050c6",
+      "train_strategyB_ruleD_120s_50pct.csv.gz": "8e60251e2bb5137547881b23473b77213beb1e4556047c110196b02c098e5c48",
+      "train_strategyC_ruleA_60s_10pct.csv.gz": "68cf0edc81ec4c6c4dfcd9dd477f94b35b455e15bba91b1f957ceda2f380843c",
+      "train_strategyC_ruleB_60s_20pct.csv.gz": "432db0f406c45de3d8e026457f1ab10ac09d84df8ac2c4e8340ba50163940d40",
+      "train_strategyC_ruleC_120s_20pct.csv.gz": "4df287f1aef4de4088fce8d3b228728360127679bc9497d3c20722f69a4044f6",
+      "train_strategyC_ruleD_120s_50pct.csv.gz": "ec3ae9e5d81f997638d1c2c94447cce1ce3fe1e1399554af2faeaec2d8b64001",
+      "validation_strategyA_ruleA_60s_10pct.csv.gz": "37f378ca271f0a1c0911ad3af4687584d04b720872709e9918e3823a17d7a8ae",
+      "validation_strategyA_ruleB_60s_20pct.csv.gz": "7bc7ce936a82d5f2bec2c47f586633939807ab8d6a6c70e3fcc086b28e3dbff9",
+      "validation_strategyA_ruleC_120s_20pct.csv.gz": "4cd255a19b9d4a8e72abe4fd6f13302629152ae01e9d7b911f248d27a8ea985b",
+      "validation_strategyA_ruleD_120s_50pct.csv.gz": "6d54dcb4a24d15e591954e5ba544dc7e766c339400bf0b59eba5a3abd848e1ff",
+      "validation_strategyB_ruleA_60s_10pct.csv.gz": "6d71f369947635e8c82dfc90777d9c9aeabd20fe6bc6395c090f5f946abf6e6f",
+      "validation_strategyB_ruleB_60s_20pct.csv.gz": "0bcd9c04c068312d86fc5a7397b89b7a2f1e5f7f0fd1d8506e5fc323a11bd6ce",
+      "validation_strategyB_ruleC_120s_20pct.csv.gz": "92d9b4b073b14fa3206aa4e954e6a48b5524ce56c4d4aebefba9e24d44d63392",
+      "validation_strategyB_ruleD_120s_50pct.csv.gz": "07b8dd00d633e155e6acf442f91532e95162015d5e5bc334385fabd4a10dc348",
+      "validation_strategyC_ruleA_60s_10pct.csv.gz": "734b52647ba168e9694aaeb2bb340d1d486e1df7274b43640ae84e2f4aff28d0",
+      "validation_strategyC_ruleB_60s_20pct.csv.gz": "9df1194d226f9d9bddc5440c4f3d071461903a080103a842ce9cfc4a5ded4bfc",
+      "validation_strategyC_ruleC_120s_20pct.csv.gz": "b95cbc75439078eaec49a8caf2ff161e1c10482b9b496d24247aa2eb6d6f50fc",
+      "validation_strategyC_ruleD_120s_50pct.csv.gz": "d65e27038acdafe68fce8ae29439a7d552d0d58d1ba048fcc9bda0af3f7bbea0"
+    },
+    "metadata_projection_sha256": "c1f8a53e8020ab71a16e8d3e3b1b4a4e8aaad34f6f2c8f1ad5b686df521ac9c1"
+  },
+  "runtime_seconds": 126.78
+}
